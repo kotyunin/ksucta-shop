@@ -1,14 +1,24 @@
 'use strict';
 
 const gulp = require('gulp'),
-			gp = require('gulp-load-plugins')();
+			gp = require('gulp-load-plugins')(),
+			browserSync = require('browser-sync').create();
+
+gulp.task('serve', function() {
+	browserSync.init({
+		server: {
+			baseDir: "./build"
+		}
+	});
+});
 			
 gulp.task('pug', () => {
 	return gulp.src('src/pug/pages/*.pug')
 		.pipe(gp.pug({
 			pretty: true // disables html compressing
 		}))
-		.pipe(gulp.dest('build'));
+		.pipe(gulp.dest('build'))
+		.on('end',browserSync.reload);
 })
 
 gulp.task('scss', () => {
@@ -20,7 +30,10 @@ gulp.task('scss', () => {
 		}))
 		.pipe(gp.csso()) // Minimizing the code, removes duplicate styles
 		.pipe(gp.sourcemaps.write())
-		.pipe(gulp.dest('build/css'));
+		.pipe(gulp.dest('build/css'))
+		.pipe(browserSync.reload({
+			stream: true
+		}));
 })
 
 gulp.task('watch', () => {
@@ -30,5 +43,5 @@ gulp.task('watch', () => {
 
 gulp.task('default', gulp.series(
 	gulp.parallel('pug', 'scss'),
-	'watch'
+	gulp.parallel('watch', 'serve'),
 ))
