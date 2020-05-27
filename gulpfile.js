@@ -22,3 +22,13 @@ gulp.task('scss', () => {
 		.pipe(gp.sourcemaps.write())
 		.pipe(gulp.dest('build/css'));
 })
+
+gulp.task('watch', () => {
+	gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
+	gulp.watch('src/static/**/*.scss', gulp.series('scss'));
+})
+
+gulp.task('default', gulp.series(
+	gulp.parallel('pug', 'scss'),
+	'watch'
+))
