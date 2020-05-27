@@ -1,9 +1,9 @@
 const gulp = require('gulp'),
-			pug = require('gulp-pug');
+			gp = require('gulp-load-plugins')();
 			
 gulp.task('pug', () => {
 	return gulp.src('src/pug/pages/*.pug')
-		.pipe(pug({
+		.pipe(gp.pug({
 			pretty: true // disables html compressing
 		}))
 		.pipe(gulp.dest('build'));
