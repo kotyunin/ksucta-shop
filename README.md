@@ -9,6 +9,7 @@
 
 #### Дизайн проекта
 Точный дизайн макет не утверждён, есть наброски:
+
 https://ninjamock.com/s/776R9Tx
 https://www.figma.com/file/J0r0cD5u0qbpypyYnsb7PR/maket?node-id=0%3A1
 https://drive.google.com/file/d/1U6PBlAPdsoG56SvaD7T-1yfGWGq-JKLi/view?usp=sharing
