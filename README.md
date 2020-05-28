@@ -50,20 +50,16 @@ https://drive.google.com/file/d/1U6PBlAPdsoG56SvaD7T-1yfGWGq-JKLi/view?usp=shari
 #### gulp-csso. [ссылка на источник](https://www.npmjs.com/package/gulp-csso)
 Подключается во время компиляции SASS в CSS, удаляет повторяющийся код и минифицирует его
 
-
 #### gulp-autoprefixer. [ссылка на источник](https://www.npmjs.com/package/gulp-autoprefixer)
-Подключается во время компиляции SASS в CSS, удаляет повторяющийся код и минифицирует его
+Добавляет вендорные префиксы для корректной поддержки css кода разными браузерами
 
-#### gulp-autoprefixer. [ссылка на источник](https://www.npmjs.com/package/gulp-autoprefixer)
-Подключается во время компиляции SASS в CSS, удаляет повторяющийся код и минифицирует его
-
-#### gulp-autoprefixer. [ссылка на источник](https://www.npmjs.com/package/gulp-tinypng)
+#### gulp-tinypng. [ссылка на источник](https://www.npmjs.com/package/gulp-tinypng)
 Оптимизирует изображения в папке src/images
 
 #### gulp-concat. [ссылка на источник](https://www.npmjs.com/package/gulp-concat)
 Обьединяет несколько файлов в один
 
-#### gulp-concat. [ссылка на источник](https://www.npmjs.com/package/gulp-sourcemaps)
+#### gulp-sourcemaps. [ссылка на источник](https://www.npmjs.com/package/gulp-sourcemaps)
 Создаёт source-maps в конце css кода
 
 #### gulp-load-plugins. [ссылка на источник](https://www.npmjs.com/package/gulp-load-plugins)
