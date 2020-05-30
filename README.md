@@ -25,6 +25,7 @@ https://drive.google.com/file/d/1U6PBlAPdsoG56SvaD7T-1yfGWGq-JKLi/view?usp=shari
 - CSS (SASS). &nbsp;[Документация по работе с SASS](https://sass-lang.com/documentation)
 - JS (jQuery)
 - Libs (jQuery.js, Slick-slider.js, Normalize.css, FancyBox.js)
+- PHP (WordPress + WooCommerce)
 
 ## GULP - подробно о настройке сборщика проекта и его модулях
 
