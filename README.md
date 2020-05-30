@@ -27,6 +27,23 @@ https://drive.google.com/file/d/1U6PBlAPdsoG56SvaD7T-1yfGWGq-JKLi/view?usp=shari
 - Libs (jQuery.js, Slick-slider.js, Normalize.css, FancyBox.js)
 - PHP (WordPress + WooCommerce)
 
+## Файловая структура
+<ul>
+  <li><strong>"Build" папка</strong>: содержит в себе готовый проект</li>
+	<li><strong>"Gulp" папка</strong>: содержит в таски для работы gulp-плагинов
+    <ul>
+			<li><strong>"Config" папка</strong>: экспортирует из всех файлов в соседней папке tasks написанные скрипты</li>
+			<li><strong>"Tasks" папка</strong>: хранит в себе файлы тасков для галпа, один таск == один файл</li>
+		</ul>
+  </li>
+	<li><strong>"Src" папка</strong>: содержит в себе файлы для разработки проекта:
+		<ul>
+			<li><strong>"Pug" папка</strong>: содержит в себе файлы с расширением .pug, которые gulp компилирует в HTML</li>
+			<li><strong>"Static" папка</strong>: содержит остальные файлы для разработки (.js и .scss) </li>
+		</ul>
+	</li>
+</ul>
+
 ## GULP - подробно о настройке сборщика проекта и его модулях
 
 Список подключенных модулей для разработки (devDependencies list):
