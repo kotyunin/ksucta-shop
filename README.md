@@ -39,7 +39,7 @@ https://drive.google.com/file/d/1U6PBlAPdsoG56SvaD7T-1yfGWGq-JKLi/view?usp=shari
 	<li><strong>"Src" папка</strong>: содержит в себе файлы для разработки проекта:
 		<ul>
 			<li><strong>"Pug" папка</strong>: содержит в себе файлы с расширением .pug, которые gulp компилирует в HTML</li>
-			<li><strong>"Static" папка</strong>: содержит остальные файлы для разработки (.js и .scss) </li>
+			<li><strong>"Static" папка</strong>: содержит остальные файлы для разработки (js,scss, fonts, images) </li>
 		</ul>
 	</li>
 </ul>
