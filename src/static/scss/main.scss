@@ -1,1 +1,8 @@
-@import 'libs.scss';
+@import 'libs';
+@import 'vars';
+@import 'fonts';
+@import 'mixins';
+@import 'interface'; // Import body, titles, buttons styles
+
+
+@import 'media';
