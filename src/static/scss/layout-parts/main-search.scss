@@ -1,6 +1,242 @@
+// Styles for main-search elements, when menu is open
+@mixin menuIsOpen {
+  &-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  &-menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &-overlay {
+    opacity: 1;
+  }
+}
+// Styles for menu list
+@mixin menuList {
+  @include notList;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  width: rem(300px);
+  z-index: 9;
+  max-height: rem(450px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .7s opacity;
+}
+// Styles for menu item
+@mixin menuListItem {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 100%;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:hover {
+    & > a {
+      box-shadow: inset 0 2px 12px rgba(0, 0, 0, .08);
+    }
+  }
+  a {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding: rem(15px);
+    padding-right: rem(25px);
+    color: #000;
+    text-decoration: none;
+    transition: all .1s ease;
+    @include textEllipsis;
+  }
+}
+@mixin arrowIcon {
+  content: '';
+  display: block;
+  width: rem(10px);
+  height: rem(10px);
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  margin-top: rem(-5px);
+}
+@mixin defaultElementStyles {
+  color: #fff;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: rgba(255, 255, 255, 0.35);
+  height: rem(41px);
+  transition: all .2s ease;
+}
+
 .main-search {
-  background: #4568DC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  padding: rem(10px) 0;
+  color: #fff;
+  &--wrapper {
+    @include gradientColor;
+  }
+  &__cataloc, &__form {
+    height: rem(60px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__cataloc {
+    &-overlay {
+      @extend .overlay;
+    }
+    &:hover {
+      .main-search__cataloc {
+        @include menuIsOpen;
+      }
+    }
+    &-btn {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include defaultElementStyles;
+      padding: 0 rem(15px);
+      &:hover, &:focus, &:active {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      & > span {
+        font-size: rem(18px);
+      }
+      &::after {
+        @include arrowIcon;
+        border-color: #fff;
+        transform: rotate(-45deg);
+      }
+      &:hover, &:focus, &:active {
+        & ~ .main-search__cataloc {
+          @include menuIsOpen;
+        }
+      }
+    }
+    &-menu {
+      @include menuList;
+      left: 0;
+      bottom: 0;
+      transform: translateY(100%);
+      .menu-item {
+        @include menuListItem;
+        &.menu-item-has-children {
+          @include menuListItem;
+          position: relative;
+          &::after {
+            @include arrowIcon;
+            border-color: #000;
+            transform: rotate(-135deg);
+            position: absolute;
+            right: rem(15px);
+            top: 50%;
+          }
+          &:hover {
+            .sub-menu {
+              opacity: 1;
+              pointer-events: auto;
+            }
+          }
+          .sub-menu {
+            @include menuList;
+            right: 0;
+            top: -1px;
+            transform: translateX(100%);
+            border-left: 1px solid rgba(0, 0, 0, 0.08);
+          }
+        }
+      }
+    }
+  }
+  &__form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &-field {
+      position: relative;
+      width: 100%;
+      @include defaultElementStyles;
+      display: flex;
+      align-items: center;
+      margin-right: rem(15px);
+      input, &-clear {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        transition: all .3s ease;
+      }
+      input {
+        flex: 1;
+        color: #fff;
+        padding: 0 rem(15px);
+        line-height: rem(41px);
+        &:-webkit-autofill {
+          color: inherit;
+          background: transparent;
+        }
+        &::placeholder {
+          color: #fff;
+        }
+        &:hover, &:focus, &:active {
+          background-color: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+      &-clear {
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0 rem(15px);
+        min-width: rem(72px);
+        cursor: pointer;
+        &:hover, &:focus, &:active {
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+      &-result {
+        width: 100%;
+        padding: rem(5px) rem(15px);
+        background-color: #fff;
+        box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transform: translateY(100%);
+        border-radius: 0 0 4px 4px;
+        border: 1px solid rgba(0,0,0,0.06);
+        color: #000;
+        &-list {
+          @include notList;
+        }
+        &-item {
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          &:first-child {
+            border: none;
+          }
+          &, a {
+            width: 100%;
+            min-height: rem(40px);
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            @include textEllipsis;
+          }
+        }
+      }
+    }
+    &-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: rem(38px);
+      padding: 0 rem(25px);
+      border-radius: 4px;
+      background-color: darken(#fff, 2%);
+      color: #000;
+      transition: all .2s ease;
+      &:hover {
+        box-shadow: inset 0 2px 12px rgba(0, 0, 0, .28);
+      }
+    }
+  }
 }

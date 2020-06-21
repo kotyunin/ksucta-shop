@@ -1,3 +1,36 @@
-.main-search
+.main-search--wrapper
   .container
-    
+    .row
+      div.col-3
+        .main-search__cataloc
+          button.main-search__cataloc-btn
+            span Каталог
+          .main-search__cataloc-overlay
+          ul.main-search__cataloc-menu
+            li.menu-item
+              a(href="") Menu-item#1
+            li.menu-item.menu-item-has-children
+              a(href="") Menu-item#2
+              ul.sub-menu
+                li.menu-item
+                  a(href="") Menu-item#1
+                li.menu-item
+                  a(href="") Menu-item#1
+            li.menu-item
+              a(href="") Menu-item#3
+      div.col-9
+        form(method="POST").main-search__form
+          .main-search__form-field
+            input(type="text" value="" name="s" placeholder="Поиск товара по названию...")
+            .main-search__form-field-clear Очистить
+            .main-search__form-field-result
+              ul.main-search__form-field-result-list
+                li.main-search__form-field-result-item По данному
+                li.main-search__form-field-result-item По данному
+                li.main-search__form-field-result-item По данному
+                li.main-search__form-field-result-item
+                  a(href="#") По данному
+          button.main-search__form-submit Поиск
+          
+          
+        

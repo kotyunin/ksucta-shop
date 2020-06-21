@@ -9,9 +9,10 @@ html(lang="en")
 		link(href="css/main.css" rel="stylesheet")
 		title= pageTitle
 	body
-		include ../modules/header
-		block content
-		include ../modules/footer
+		div.content-wrapper
+			include ../modules/header
+			block content
+			include ../modules/footer
 
 		script(src="js/libs.min.js")
 		script(src="js/main.js")
