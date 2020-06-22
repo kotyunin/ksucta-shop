@@ -19,6 +19,11 @@ button, input, textarea {
   outline: none !important;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .content-wrapper {
   z-index: 1;
 }
