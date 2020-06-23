@@ -24,6 +24,11 @@ img {
   max-width: 100%;
 }
 
+svg {
+  max-width: 100%;
+  fill: $accent;
+}
+
 .content-wrapper {
   z-index: 1;
 }

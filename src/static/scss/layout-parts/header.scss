@@ -52,4 +52,61 @@
       }
     }
   }
+  &__block {
+    margin-right: rem(30px);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__contact {
+    &-column {
+      padding-right: rem(30px);
+      &:nth-child(2) {
+        border-right: 1px solid #dadada;
+      }
+    }
+    &-row {
+      white-space: nowrap;
+      &:nth-child(2) {
+        margin-top: rem(6px);
+      }
+    }
+    &-icon {
+      width: rem(34px);
+      min-width: rem(34px);
+      margin-right: rem(10px);
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &-info {
+      font-size: rem(18px);
+      font-weight: 600;
+      a {
+        color: #000;
+      }
+      span, button {
+        display: inline-block;
+        font-size: rem(16px);
+        font-weight: 400;
+        color: #666;
+      }
+      button:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__login, &__cart {
+    &-icon {
+      width: rem(28px);
+      min-width: rem(28px);
+      margin: 0 auto;
+    }
+    &-text {
+      font-size: rem(12px);
+      margin-top: rem(4px);
+      color: #666;
+    }
+  }
 }

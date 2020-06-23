@@ -15,7 +15,34 @@ header.header
 							.header__logo-title KSUCTA SHOP
 								span online shop
 				.col-9
-					.row.justify-content-end
-						.col
-							
+					.d-flex.justify-end.align-center
+						.header__block.d-flex.align-center
+							.header__contact-column.d-flex.align-center
+								.header__contact-icon
+									include ../icons/ic-time
+								.header__contact-info
+									.header__contact-row.d-flex.justify-between
+										span Пн-Пт:&nbsp;
+										| 09:00 - 19:00
+									.header__contact-row.d-flex.justify-between
+										span Сб-Вс:&nbsp;
+										| 10:00 - 17:00
+							.header__contact-column.d-flex.align-center
+								.header__contact-icon
+									include ../icons/ic-phone
+								.header__contact-info
+									.header__contact-row
+										a(href="tel:8(555)555-55-55") 8 (555) 555-55-55
+									.header__contact-row
+										button(id="callback" type="button") Обратный звонок
+						.header__block
+							a(href="#").header__login
+								.header__login-icon
+									include ../icons/ic-user
+								.header__login-text Аккаунт
+						.header__block
+							a(href="#").header__cart
+								.header__cart-icon
+									include ../icons/ic-cart
+								.header__cart-text Корзина
 	include ./main-search
