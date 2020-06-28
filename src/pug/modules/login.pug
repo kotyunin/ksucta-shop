@@ -1,0 +1,56 @@
+section.account-page
+  .container
+    .row.justify-content-center
+      .col-sm-10
+        .section-header.section-header--align-center
+          h2.section-header__title Мой аккаунт
+          p.section-header__description Чтобы войти в аккаунт, необходимо выполнить авторизацию
+        .section-body
+          ul.alert.alert--error 
+            li Ошибка №1
+            li Ошибка №2
+          .row
+            .col-md-6
+              h3.account-page__form-title Авторизация
+              form.woocommerce-form.woocommerce-form-login
+                p.woocommerce-form-row
+                  label(for="username")
+                    | Имя пользователя или email
+                    span.required *
+                  input(id="username")
+                p.woocommerce-form-row
+                  label(for="password")
+                    | Пароль
+                    span.required *
+                  input(id="password", type="password")
+                div.form-group
+                  .checkbox
+                    label.woocommerce-form__label-for-checkbox
+                      input(type="checkbox" id="rememberme")
+                      span Запомнить меня
+                button(type="submit") Войти
+                a(href="").woocommerce-LostPassword Забыли пароль?
+            .col-md-6
+              h3.account-page__form-title Регистация
+              form.woocommerce-form.woocommerce-form-register
+                p.woocommerce-form-row
+                  label(for="reg_username")
+                    | Имя пользователя
+                    span.required *
+                  input(id="reg_username")
+                p.woocommerce-form-row
+                  label(for="reg_email")
+                    | Пароль
+                    span.required *
+                  input(id="reg_email", type="email")
+                p.woocommerce-form-row
+                  label(for="reg_password")
+                    | Пароль
+                    span.required *
+                  input(id="reg_password", type="password")
+                div.woocommerce-privacy-policy-text
+                  p
+                    | Ваши личные данные будут использоваться для упрощения вашей работы с сайтом, управления доступом к вашей учётной записи и для других целей, описанных в нашей 
+                    a(href="#").woocommerce-privacy-policy-link политике конфиденциальности
+                button(type="submit") Регистация
+                
