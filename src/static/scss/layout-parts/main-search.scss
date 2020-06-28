@@ -81,6 +81,7 @@
     justify-content: center;
   }
   &__cataloc {
+    z-index: 9;
     &-overlay {
       @extend .overlay;
     }
@@ -195,7 +196,6 @@
       }
       &-result {
         width: 100%;
-        padding: rem(5px) rem(15px);
         background-color: #fff;
         box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
         position: absolute;
@@ -203,10 +203,12 @@
         bottom: -10px;
         transform: translateY(100%);
         border-radius: 0 0 4px 4px;
-        border: 1px solid rgba(0,0,0,0.06);
         color: #000;
+        transition: height 0.2s ease-out, top 0.2s ease-out, padding 0.2s ease-out, 0.3s width ease-out 0.2s;;
         &-list {
           @include notList;
+          padding: rem(5px) rem(15px);
+          border: 1px solid rgba(0,0,0,0.06);
         }
         &-item {
           border-top: 1px solid rgba(0, 0, 0, 0.1);
