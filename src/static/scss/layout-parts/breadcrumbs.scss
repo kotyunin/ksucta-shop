@@ -1,0 +1,15 @@
+.breadcrumbs {
+  background: $bg-gray;
+  width: 100%;
+  padding: rem(15px) 0;
+}
+
+.woocommerce-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  cursor: default;
+  a {
+    color: $accent;
+  }
+}
