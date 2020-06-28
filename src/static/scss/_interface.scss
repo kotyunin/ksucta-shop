@@ -99,6 +99,12 @@ svg {
   }
 }
 
+.section-body {
+  p {
+    line-height: 1.5;
+  }
+}
+
 .alert {
   @include notList;
   padding: rem(15px) rem(25px);

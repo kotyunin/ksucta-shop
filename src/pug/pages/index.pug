@@ -2,6 +2,12 @@ extends ../layout/main-layout
 
 block variables
 	- var pageTitle = 'KSUCTA - online shop'
+	- var accountPage = false
+	- var infoPage = false
 
 block content
-	include ../modules/login
+	include ../modules/product-card
+	if accountPage
+		include ../modules/login
+	else if infoPage
+		include ../modules/info-page
